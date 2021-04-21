@@ -1,0 +1,9 @@
+{
+  "name": "@jakzo/testpkg",
+  "version": "0.0.1",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
+  },
+  "main": "index.js"
+}
