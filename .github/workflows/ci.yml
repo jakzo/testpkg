@@ -20,6 +20,7 @@ jobs:
         id: publish
         run: |
           set -e
+          echo 'registry = "https://registry.yarnpkg.com"' > .npmrc
           # npm config set -- _authToken "$NODE_AUTH_TOKEN"
           yarn publish
         env:
