@@ -22,7 +22,7 @@ jobs:
           set -e
           echo 'registry = "https://registry.yarnpkg.com"' > .npmrc
           npm config set '//registry.npmjs.org/:_authToken' "$NODE_AUTH_TOKEN"
-          npm config set _authToken "$NODE_AUTH_TOKEN"
+          npm config set _authToken xyz
           yarn publish
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
