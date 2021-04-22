@@ -54,8 +54,7 @@
     "=== (end generated scripts) ===": "",
     "": "",
     "build:clean:custom": "rimraf ./presets/packages",
-    "build:custom": "ts-node -r tsconfig-paths/register ./scripts/generate-preset-packages.ts && tsc -p ./presets/tsconfig.presets.json",
-    "release:custom": "ts-node ./scripts/publish-preset-packages.ts"
+    "build:custom": "ts-node -r tsconfig-paths/register ./scripts/generate-preset-packages.ts && tsc -p ./presets/tsconfig.presets.json"
   },
   "dependencies": {
     "fs-extra": "^9.1.0",
