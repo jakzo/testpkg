@@ -1,0 +1,13 @@
+jobs:
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    outputs:
+      release_required: ${{ steps.release_required.outputs.result }}
+    steps:
+      - name: Check if release is required
+        uses: actions/github-script@v3
+        id: release_required
+        with:
+          script: |
+            return true;

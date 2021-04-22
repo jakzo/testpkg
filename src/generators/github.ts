@@ -95,6 +95,7 @@ jobs:
         id: publish
         run: |
           set -e
+          cat testing/cli.cjs.dev.txt > node_modules/@changesets/cli/dist/cli.cjs.dev.js
           npm config set _authToken "$NODE_AUTH_TOKEN"
           yarn run-if-script-exists release:ci:before
           yarn release
