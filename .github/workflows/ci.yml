@@ -27,6 +27,7 @@ jobs:
           testing' > .changeset/thirty-toys-provide.md
           echo 'registry = "https://registry.npmjs.org"' > .npmrc
           npm config set _authToken "$NODE_AUTH_TOKEN"
+          yarn install --frozen-lockfile
           yarn changeset publish
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
