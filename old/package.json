@@ -1,0 +1,12 @@
+{
+  "name": "@jakzo/testpkg",
+  "version": "0.0.5",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
+  },
+  "main": "index.js",
+  "devDependencies": {
+    "@changesets/cli": "^2.16.0"
+  }
+}
