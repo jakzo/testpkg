@@ -31,4 +31,4 @@ jobs:
           yarn changeset publish
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          npm_config_authToken: ${{ secrets.NPM_TOKEN }}
+          npm_config__authToken: ${{ secrets.NPM_TOKEN }}
