@@ -16,13 +16,13 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: v0.1.4
-          release_name: v0.1.4
+          tag_name: v0.1.5
+          release_name: v0.1.5
           body: asdf
       - name: Print release upload URL
         uses: actions/github-script@v4
         env:
-          RELEASE_UPLOAD_URL: "${{ steps.create_release.outputs.release_upload_url }}"
+          RELEASE_UPLOAD_URL: "${{ steps.create_release.outputs.upload_url }}"
         with:
           script: |
             const uploadUrl = process.env.RELEASE_UPLOAD_URL;
