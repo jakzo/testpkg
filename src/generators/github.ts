@@ -38,31 +38,12 @@ jobs:
     outputs:
       release_required: \${{ steps.release_required.outputs.result }}
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-        with:
-          # Fetch Git history so that Changesets can check if release is required
-          fetch-depth: 0
-      - name: Setup Node.js
-        uses: actions/setup-node@v1
-        with:
-          node-version: \${{ env.node_version }}
-      - name: Install dependencies
-        run: yarn install --frozen-lockfile
-      - name: Test
-        run: |
-          set -e
-          yarn run-if-script-exists test:ci:before
-          yarn test:all
-          yarn run-if-script-exists test:ci:after
       - name: Check if release is required
         uses: actions/github-script@v3
         id: release_required
         with:
           script: |
-            const releaseUtils = require(process.env.GITHUB_WORKSPACE + '/node_modules/@changesets/release-utils');
-            const { changesets } = await releaseUtils.readChangesetState();
-            return changesets.length > 0;
+            return true;
 
   release:
     name: Release
