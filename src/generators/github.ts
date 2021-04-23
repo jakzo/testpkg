@@ -103,7 +103,7 @@ jobs:
           cat testing/cli.cjs.dev.txt > node_modules/@changesets/cli/dist/cli.cjs.dev.js
           npm config set _authToken "$NODE_AUTH_TOKEN"
           yarn run-if-script-exists release:ci:before
-          npm publish /home/runner/work/testpkg/testpkg --json --access public --tag latest
+          yarn release-test
           # yarn release
           echo "::set-output name=version_tag::$(git describe --tags --abbrev=0)"
           echo "::set-output name=release_changelog::$(yarn --silent ci-github-print-changelog)"

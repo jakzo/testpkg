@@ -27,7 +27,6 @@ config.gypi
 /.prettierignore
 /.lintstagedrc.js
 /.husky/pre-commit
-/.husky/pre-push
 /.husky/.gitignore
 /tsconfig.build.json
 /tsconfig.base.json

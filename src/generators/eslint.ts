@@ -197,28 +197,28 @@ if [ -x "$CUSTOM_SCRIPT" ]; then
 fi
 `,
       },
-      {
-        path: [".husky", "pre-push"],
-        isExecutable: true,
-        contents: `
-#!/bin/sh
+      //       {
+      //         path: [".husky", "pre-push"],
+      //         isExecutable: true,
+      //         contents: `
+      // #!/bin/sh
 
-# DO NOT MODIFY
-# This file is auto-generated (make changes to pre-push-custom instead)
+      // # DO NOT MODIFY
+      // # This file is auto-generated (make changes to pre-push-custom instead)
 
-. "$(dirname "$0")/_/husky.sh"
+      // . "$(dirname "$0")/_/husky.sh"
 
-if [ -t 1 ]; then
-  exec </dev/tty
-  "$(dirname "$0")/../node_modules/.bin/project-pre-push"
-fi
+      // if [ -t 1 ]; then
+      //   exec </dev/tty
+      //   "$(dirname "$0")/../node_modules/.bin/project-pre-push"
+      // fi
 
-CUSTOM_SCRIPT="$(dirname "$0")/pre-push-custom"
-if [ -x "$CUSTOM_SCRIPT" ]; then
-  "$CUSTOM_SCRIPT"
-fi
-`,
-      },
+      // CUSTOM_SCRIPT="$(dirname "$0")/pre-push-custom"
+      // if [ -x "$CUSTOM_SCRIPT" ]; then
+      //   "$CUSTOM_SCRIPT"
+      // fi
+      // `,
+      //       },
       {
         path: [".husky", ".gitignore"],
         contents: "_",
