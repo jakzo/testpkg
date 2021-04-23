@@ -1,5 +1,11 @@
 # @jstm/core
 
+## 0.0.10
+
+### Patch Changes
+
+- 622d7e5: testing
+
 ## 0.3.15
 
 ### Patch Changes
