@@ -3,25 +3,21 @@ name: CI
 on:
   push:
     branches:
-      - main
+      - release
 
 jobs:
   release:
     name: Release
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-      - name: Setup Node.js
-        uses: actions/setup-node@v1
-        with:
-          node-version: 14
-      - name: Publish to npm
-        id: publish
-        run: |
-          set -e
-          # npm config set -- _authToken "$NODE_AUTH_TOKEN"
-          yarn publish
+      - name: Create release
+        id: create_release
+        uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        with:
+          tag_name: v0.1.2
+          release_name: v0.1.2
+          body: asdf
+      - name: Print release upload URL
+        run: echo Upload URL = ${{ steps.create_release.outputs.release_upload_url }}
