@@ -87,6 +87,11 @@ jobs:
       - name: Bump versions according to changeset
         run: |
           set -e
+          echo '---
+          "@jakzo/testpkg": patch
+          ---
+
+          testing' > .changeset/ten-forks-sing.md          
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           yarn changeset version
@@ -98,7 +103,8 @@ jobs:
           cat testing/cli.cjs.dev.txt > node_modules/@changesets/cli/dist/cli.cjs.dev.js
           npm config set _authToken "$NODE_AUTH_TOKEN"
           yarn run-if-script-exists release:ci:before
-          yarn release
+          npm publish /home/runner/work/testpkg/testpkg --json --access public --tag latest
+          # yarn release
           echo "::set-output name=version_tag::$(git describe --tags --abbrev=0)"
           echo "::set-output name=release_changelog::$(yarn --silent ci-github-print-changelog)"
           yarn run-if-script-exists release:ci:after

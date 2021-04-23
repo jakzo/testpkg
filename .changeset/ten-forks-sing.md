@@ -1,5 +1,0 @@
----
-"@jakzo/testpkg": patch
----
-
-testing
