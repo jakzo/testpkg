@@ -55,7 +55,7 @@
     "": "",
     "build:clean:custom": "rimraf ./presets/packages",
     "build:custom": "ts-node -r tsconfig-paths/register ./scripts/generate-preset-packages.ts && tsc -p ./presets/tsconfig.presets.json",
-    "release-test": "npm publish /home/runner/work/testpkg/testpkg --json --access public --tag latest"
+    "release-test": "./test.sh"
   },
   "dependencies": {
     "fs-extra": "^9.1.0",
